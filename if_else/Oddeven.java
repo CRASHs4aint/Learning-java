@@ -8,7 +8,10 @@ public class Oddeven {
 
         System.out.print("Enter a postive number:");
         int a = sc.nextInt();
-        if (a % 2 == 0) System.out.println("Even number");
-        else System.out.println("Odd Number");
+        if (a % 2 == 0) {
+            System.out.println("Even number");
+        } else {
+            System.out.println("Odd Number");
+        }
     }
 }
