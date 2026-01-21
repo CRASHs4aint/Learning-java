@@ -1,8 +1,4 @@
 package LinkList;
-class Node{
-    int val;
-    Node next;
-}
 
 public class NodeOfLinkedlist
 {
