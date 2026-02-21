@@ -17,7 +17,7 @@ package Multi_threading;
                 try {
                     for (int i = 5; i > 0; i--) {
                         System.out.println("Child Thread: " + i);
-                        Thread.sleep(500);
+                        Thread.sleep(1000);
                     }
                 } catch (InterruptedException e) {
                     System.out.println("Child interrupted.");
@@ -34,7 +34,7 @@ package Multi_threading;
                 try {
                     for (int i = 5; i > 0; i--) {
                         System.out.println("Main Thread: " + i);
-                        Thread.sleep(1000);
+                        Thread.sleep(1500);
                     }
                 } catch (InterruptedException e) {
                     System.out.println("Main thread interrupted.");
