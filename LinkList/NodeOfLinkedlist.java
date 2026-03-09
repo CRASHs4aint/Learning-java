@@ -1,6 +1,6 @@
 package LinkList;
 
-public class NodeOfLinkedlist
+public class  NodeOfLinkedlist
 {
    public static void main(String[] args) {
 //10 20 30 40
