@@ -2,7 +2,8 @@ package Sorting;
 
 public class Bubble_sort {
     static void main() {
-        int[] arr = {6, 7, 3, 2, 8, 9};
+//        int[] arr = {6, 7, 3, 2, 8, 9};
+        int[] arr = {5,8,9,1,6};
         for (int i = 0; i < arr.length-1; i++) {
             for (int j = 0; j < arr.length-1-i; j++) {
                 if ( arr[j] >arr[j + 1]){
@@ -13,7 +14,7 @@ public class Bubble_sort {
             }
         }
         for (int i = 0; i < arr.length; i++) {
-            System.out.printf("%d", arr[i]);
+            System.out.printf("%d ", arr[i]);
         }
 
     }

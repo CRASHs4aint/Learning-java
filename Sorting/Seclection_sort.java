@@ -20,7 +20,7 @@ public class Seclection_sort {
         }
 
         for (int i = 0; i < arr.length; i++) {
-            System.out.printf("%d", arr[i]);
+            System.out.printf("%d ", arr[i]);
         }
 
     }
