@@ -1,8 +1,78 @@
 package stack;
 
 public class linkListImplementaion {
+    public static class Node {
+        int val;
+        Node next;
+
+        Node(int x) {
+            this.val = x;
+        }
+    }
+
+    public static class LLStack {
+        private Node head = null;
+        private int size = 0;
+
+        void push(int x) {
+            Node temp = new Node(x);
+            temp.next = head;
+            head = temp;
+            size++;
+        }
+
+        int pop() {
+            if (head == null) {
+                System.out.println("Stack is empty!");
+                return -1;
+            }
+            int x = head.val;
+            head = head.next;
+            return x;
+        }
+
+        int peek() {
+            if (head == null) {
+                System.out.println("Stack is empty!");
+                return -1;
+            }
+            return head.val;
+        }
+
+        void displayrec(Node h) {
+            if (h == null) return;
+            displayrec(h.next);
+            System.out.print(h.val + " ");
+        }
+
+        void display() {
+            displayrec(head);
+        }
+
+        void displayRev() {
+            Node temp = head;
+            while (temp != null) {
+                System.out.println(temp.val + " ");
+                temp = temp.next;
+            }
+            System.out.println();
+        }
+
+        int size() {//getter
+            return size;
+        }
+
+        boolean isEmpty() {
+            if (size == 0) return true;
+            return false;
+        }
+
+
+    }
+
+
     static void main(String[] args) {
-        Stack st = new Stack();
+        LLStack st = new LLStack();
         st.push(4);
         st.display();
         st.push(5);
@@ -15,8 +85,8 @@ public class linkListImplementaion {
         System.out.println((st.size()));
         st.push(8);
         st.push(10);
-        System.out.println(st.isFull());
-        st.push(4);
+        st.display();
+
 
     }
 }
