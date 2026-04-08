@@ -44,25 +44,60 @@ public class Doubly_linked_list {
         }
         System.out.println();
     }
-    public static Node insertAtHead(Node head,int x){
-        Node t= new Node(x);
-        t.next=head;
-        head.prev=t;
-        head=t;
+
+    public static Node insertAtHead(Node head, int x) {
+        Node t = new Node(x);
+        t.next = head;
+        head.prev = t;
+        head = t;
         return head;
 
     }
-    public static void insertAtTail(Node head,int x){
-        Node temp=head;
+
+    public static void insertAtTail(Node head, int x) {
+        Node temp = head;
         //temp ka tail tak leke jate hai
-        while(temp.next!=null){
-            temp=temp.next;
+        while (temp.next != null) {
+            temp = temp.next;
         }
-        Node t= new Node(x);
-        temp.next=t;
-        t.prev=temp;
+        Node t = new Node(x);
+        temp.next = t;
+        t.prev = temp;
     }
-   public 
+
+    public static void inserAtIdx(Node head, int idx, int x) {
+        Node s = head;
+        for (int i = 1; i < idx; i++) {
+            s = s.next;
+        }
+        //s is at idx-1
+        Node r = s.next;
+        Node t = new Node(x);
+        // s t r
+        s.next = t;
+        t.prev = s;
+        t.next = r;
+        r.prev = t;
+
+    }
+
+    public static void deleteHead(Node head) {
+        Node s = head;
+        s = head.next;
+        head.prev = null;
+    }
+
+    public static void deletionAtIdx(Node head, int idx) {
+        Node temp = head;
+        for (int i = 0; i < idx-1; i++) {
+            temp = temp.next;
+        }
+        //temp at idx-1
+        temp.next = temp.next.next;
+        temp.next.prev = temp;
+    }
+
+
     static void main(String[] args) {
         Node a = new Node(4);
         Node b = new Node(10);
@@ -84,10 +119,16 @@ public class Doubly_linked_list {
         display(a);
         displayRev(e);
         displaytwo(c);
-        Node newHead =insertAtHead(a,45);
+        Node newHead = insertAtHead(a, 45);
         display(newHead);
-       insertAtTail(a,67);
-       display(a);
+        insertAtTail(a, 67);
+        display(a);
+        inserAtIdx(a, 3, 56);
+        display(a);
+        deleteHead(a);
+        display(a);
+        deletionAtIdx(a,4);
+        display(a);
 
     }
 }
