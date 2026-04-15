@@ -35,24 +35,28 @@ public class ArraysImplementation {
         }
 
         void display() {
-            for(int i=0;i<idx;i++){
-                System.out.print(arr[i]+" ");
+            for (int i = 0; i < idx; i++) {
+                System.out.print(arr[i] + " ");
             }
             System.out.println();
 
         }
-        int size(){
+
+        int size() {
             return idx;
         }
-        boolean isEmpty(){
-            if(idx==0) return true;
+
+        boolean isEmpty() {
+            if (idx == 0) return true;
             else return false;
         }
-        boolean isFull(){
-            if(idx==arr.length) return true;
-            else return  false;
+
+        boolean isFull() {
+            if (idx == arr.length) return true;
+            else return false;
         }
-        int capacity(){
+
+        int capacity() {
             return arr.length;
         }
 
